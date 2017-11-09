@@ -1,0 +1,64 @@
+if (event.target.buttonGetCaption()=="\u2714") {
+
+    event.target.buttonSetCaption("X");
+
+    event.target.textColor = color.red;
+
+} else if (event.target.buttonGetCaption()=="X") {
+
+    event.target.buttonSetCaption("");
+
+} else if (event.target.buttonGetCaption()=="") {
+
+    event.target.buttonSetCaption("\u2714");
+
+    event.target.textColor = color.green;
+
+}
+
+
+
+
+if (event.target.buttonGetCaption()=="\u2714") {
+
+    event.target.buttonSetCaption("X");
+
+    event.target.textColor = color.red;
+
+} else if (event.target.buttonGetCaption()=="X") {
+
+    event.target.buttonSetCaption("");
+
+} else if (event.target.buttonGetCaption()=="") {
+
+    event.target.buttonSetCaption("\u2714");
+
+    event.target.textColor = color.green;
+
+}
+
+----
+if (event.target.buttonGetCaption()=="\u2605 \u2606 \u2606 \u2606 \u2606") {
+    event.target.buttonSetCaption("\u2605 \u2605 \u2606 \u2606 \u2606");
+    event.target.textColor = color.yellow;
+//1 star
+} else if (event.target.buttonGetCaption()=="\u2605 \u2605 \u2606 \u2606 \u2606") {
+    event.target.buttonSetCaption("\u2605 \u2605 \u2605 \u2606 \u2606");
+    event.target.textColor = color.yellow;
+//2 star
+}else if (event.target.buttonGetCaption()=="\u2605 \u2605 \u2605 \u2606 \u2606") {
+    event.target.buttonSetCaption("\u2605 \u2605 \u2605 \u2605 \u2606");
+    event.target.textColor = color.yellow;
+//3 star
+}else if (event.target.buttonGetCaption()=="\u2605 \u2605 \u2605 \u2605 \u2606") {
+    event.target.buttonSetCaption("\u2605 \u2605 \u2605 \u2605 \u2605");
+    event.target.textColor = color.yellow;
+// 4 star
+}else if (event.target.buttonGetCaption()=="\u2605 \u2605 \u2605 \u2605 \u2605") {
+    event.target.buttonSetCaption("Rate Me");
+// 5 back to blank
+} else if (event.target.buttonGetCaption()=="Rate Me") {
+    event.target.buttonSetCaption("\u2605 \u2606 \u2606 \u2606 \u2606");
+    event.target.textColor = color.yellow;
+}
+ 

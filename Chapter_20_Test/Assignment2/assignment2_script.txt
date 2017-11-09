@@ -1,0 +1,59 @@
+/*area script*/
+//validate tab
+if (event.value == 0) event.value = "";
+---
+// calculate tab
+var radius1 = this.getField("RadiusRow1");
+
+event.value = Math.PI * Math.pow(radius1.value, 2);
+
+-----
+/*circumference script*/
+//validte tab
+if (event.value == 0) event.value = "";
+----
+//calculate tab
+var radius2 = this.getField("RadiusRow1_2");
+
+event.value = 2 * Math.PI * radius2.value;
+----
+/*volume script*/
+//validte tab
+if (event.value == 0) event.value = "";
+----
+//calculate tab
+var radius3 = this.getField("RadiusRow1_3");
+
+event.value = (4/3)* Math.PI * Math.pow(radius3.value, 3);
+
+----
+/*fahrenheit script*/
+//validte tab
+if (event.value > 0){
+event.target.textColor = color.black;
+}
+
+else{
+event.target.textColor = color.red;
+}
+---
+//calculate tab
+var celsius = this.getField("CelsiusRow1");
+
+event.value = (celsius.value* 9/5)+32;
+----
+/*celsius script*/
+//validate tab
+if (event.value > 0){
+event.target.textColor = color.black;
+}
+
+else{
+event.target.textColor = color.red;
+}
+---
+//calculate tab
+var fahrenheit = this.getField("FahrenheitRow1_2");
+
+event.value = (fahrenheit.value-32)*(5/9);
+

@@ -1,0 +1,13 @@
+//Date Validation
+var re6Date = /^(\d{1,2})\/(\d{1,2})\/(\d{2})$/;
+var re8Date = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+
+//prevent alert if field is blank
+if(event.value !=""){
+if (re6Date.test(event.value)== false && re8Date.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid date! Format must be mm/dd/yy or mm/dd/yyyy. ");
+event.rc = false;
+}
+
+}

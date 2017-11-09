@@ -1,0 +1,40 @@
+//Buttons
+//Add a Comment/Sticky note
+var annot = this.addAnnot({
+page: this.pageNum,
+type: "Text",
+rect: [187, 168, 487, 243],
+strokeColor: color.yellow
+});
+
+
+------
+//Adding a signature field Automatically
+var c = this.addField({
+cName: "clientSignature",
+cFieldType: "signature",
+nPageNum: this.pageNum,
+oCoords: [35,74,176,112]
+})
+
+//script that creates the text field
+{
+var r = [200, 200, 400, 300];
+var i = this.pageNum;
+var f = this.addField(String("completeDate."+i),"text",i,r);
+f.textSize = 10;
+f.alignment = "right";
+f.textColor = color.blue;
+f.fillColor = color.transparent;
+f.textfont = font.HelvB;
+f.strokeColor = color.transparent;
+f.value = String("This page was reviewed on: " + util.printd("mmm dd, yyyy", new Date()));
+f.readonly = true;
+}
+
+//
+//var oPage = this.pageNum;
+//this.removeField("P" + oPage + ".newPage.signaturePrompt");
+//this.removeField("P" + oPage + ".newPage.newPage");
+
+

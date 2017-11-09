@@ -1,0 +1,23 @@
+//dropdown menu script
+//format custom keystroke script
+if(event.willCommit)
+{
+if(event.value == "Select a Topic")
+this.resetForm(["Text2"]);
+else
+SetFieldValues(event.value);
+}
+-------
+
+//Global Document SetFieldValues Script
+// Place all prepopulation data into a single data structure
+var MenuData = { Diamond:{ definition: "The Diamond has a hardness of 10."},
+Ruby:{ definition: "The Ruby has a hardness of 9."},
+Emerald :{ definition: "The Emerald has a hardness on 8. "},
+Sapphire:{ definition: "The Sapphire has a hardness of 9."},
+Tourmaline:{ definition: "Tourmaline has a hardness of 7.5."}};
+function SetFieldValues(cDropdown)
+{
+this.getField("Text2").value = MenuData[cDropdown].definition;
+
+}

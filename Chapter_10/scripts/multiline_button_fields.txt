@@ -1,0 +1,44 @@
+// Button Action
+//Run a Javascript
+
+this.getField("MyButton").buttonSetCaption("Reset\nComments");
+------
+//Custom Format Script
+event.target.textColor = 
+["RGB",0,0,1];
+---
+
+//Multiline commenting
+//Format Custom Keystroke Script 
+var t1=this.getField("Comments1");
+if (event.fieldFull)
+{
+getField("Comments2").setFocus();
+}
+
+//Second to 3rd box if required
+
+var t2=this.getField("Comments2");
+if (event.fieldFull)
+{
+getField("Comments3").setFocus();
+}
+
+//Or
+if ( event.fieldFull || event.willCommit )
+this.getField("Comments2").setFocus();
+
+-----
+// Global formatting 
+// Script to set the font and size of text fields  
+for (var i = 0; i < numFields; i++) {  
+ 
+// Get a reference to the current field  
+var f = getField(getNthFieldName(i));  
+  
+// If it's a text field, set the font and font size  
+if (f.type == "text") {  
+f.strokeColor = color.red;
+
+}  
+}  

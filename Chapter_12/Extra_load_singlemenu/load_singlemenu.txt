@@ -1,0 +1,32 @@
+// define array of entries and export values for drop down array
+
+// define array of states and abbreviations
+var aMinerals = new Array(["Select Mineral", ""],
+["Diamond", "DI"],
+["Emerald", "EM"],
+["Garnet", "GA"],
+["Opal", "OP"],
+["Ruby", "RB"],
+["Sapphire", "SP"]);
+
+ 
+
+// function to load a combo/list box with an array of values
+function LoadOptions(oField, aValues) {
+var bResult = false;
+// load array of values into field object
+if(oField.type != "combobox" && oField.type != "listbox") {
+app.alert("Load Options function requires a combobox or listbox", 0, 0);
+
+bResult = false;
+} else{
+oField.setItems(aValues); // set values
+bResult = true;
+}
+return bResult;
+} // end  LoadOptions
+
+
+// load the data - comment out after updating when only doing array changes
+LoadOptions(this.getField('Dropdown1'), aMinerals);
+LoadOptions(this.getField('ListBox1'), aMinerals);

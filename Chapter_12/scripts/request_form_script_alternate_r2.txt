@@ -1,0 +1,53 @@
+//Global Document SetSelectValues Script
+
+
+// Place all prepopulation data into a single data structure
+var DeptInfo = { Accounting:{ contact: "Kathy Jones",
+			      title: "Cheif Officer",
+                              email: "accounting@tmc.com",
+                              deptnum: "tmc1434", 
+				deptphone: "999-999-9922"},
+                 Engineering:{ contact: "Frank R. Smith",
+				title: "Senior Specialist",
+                              email: "engineering@tmc.com",
+                              deptnum: "tmc1435",
+				deptphone: "999-999-9921" },
+	"Graphic Department":{ contact: "Nancy Smith",
+			      title: "Artwork Planner",
+                              email: "graphics@tmc.com",
+                              deptnum: "tmc1436",
+			deptphone: "999-999-9923" },
+		ITSupport:{ contact: "Troy  Carson",
+				title: "Offical Coder",
+                              email: "it@tmc.com",
+                              deptnum: "tmc1437",
+			deptphone: "999-999-9927" },
+                 Marketing:{ contact: "Janice Walker",
+				title: "Marketing Advior ",
+                              email: "marketing@tmc.com",
+                              deptnum: "tmc1438",
+			deptphone: "999-999-9925" },
+	"Mine Site Safety":{ contact: "Rick James",
+				title: "Safety Officer",
+                              email: "mss@tmc.com",
+                              deptnum: "tmc1439", 
+			deptphone: "999-999-9924"},
+                 };
+function SetSelectValues(cDeptName)
+{
+  this.getField("DeptContact").value = DeptInfo[cDeptName].contact;
+  this.getField("DeptTitle").value = DeptInfo[cDeptName].title;
+  this.getField("DeptEmail").value = DeptInfo[cDeptName].email;
+  this.getField("DeptNumber").value = DeptInfo[cDeptName].deptnum;
+  this.getField("DeptPhone").value = DeptInfo[cDeptName].deptphone;
+}
+---
+// Custom Format Script
+if( event.willCommit ){
+   if(event.value == " "){
+     this.resetForm(["DeptContact","DeptTitle","DeptEmail","DeptNumber","DeptPhone"]);
+}
+   else{
+     SetSelectValues(event.value);
+}
+}

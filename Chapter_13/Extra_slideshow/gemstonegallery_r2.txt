@@ -1,0 +1,156 @@
+// Combo Box Selection Change Text Example
+
+var acicular = this.getField("Acicular");
+var bladed = this.getField("Bladed");
+var dendritic = this.getField("Dendritic");
+var equant = this.getField("Equant");
+var gemstone = this.getField("Gemstone");
+var globular = this.getField("Globular");
+var massive = this.getField("Massive");
+var prismatic = this.getField("Prismatic");
+var striated = this.getField("Striated");
+var tabular = this.getField("Tabular");
+
+
+if (event.changeEx == "Ac"){
+acicular.display = display.visible;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "B2"){
+acicular.display = display.hidden;
+bladed.display = display.visible
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "De"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.visible;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Eq"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.visible;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Ge"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.visible;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Gl"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.visible;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Ma"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.visible;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Pr"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.visible;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "St"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.visible;
+tabular.display = display.hidden;
+}
+
+else if (event.changeEx == "Ta"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.visible;
+}
+
+else if (event.changeEx == "None"){
+acicular.display = display.hidden;
+bladed.display = display.hidden;
+dendritic.display = display.hidden;
+equant.display = display.hidden;
+gemstone.display = display.hidden;
+globular.display = display.hidden;
+massive.display = display.hidden;
+prismatic.display = display.hidden;
+striated.display = display.hidden;
+tabular.display = display.hidden;
+}

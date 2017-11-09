@@ -1,0 +1,61 @@
+// Custom Validation of Name
+var re = /^[A-Z][a-z]+ [A-Z][a-z]+$/
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("That does not appear to be a valid name. I need a first and last name.");
+event.rc = false;
+}
+}
+-----
+//account number
+//A6BF-479X-2139
+var re = /^[A-Z]\d[A-Z]{2}-\d{3}[A-Z]-\d{4}$/
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid account number.");
+event.rc = false;
+}
+}
+
+--------
+//email
+var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid email address.");
+event.rc = false;
+}
+}
+------
+-----
+// another phone option
+//phone validation alert
+var re7Digits = /^(\d{3})-(\d{4})$/;
+var re10Digits = /^(\d{3})-(\d{3})-(\d{4})$/;
+
+//prevent alert if field is blank
+if(event.value !=""){
+if (re7Digits.test(event.value)== false && re10Digits.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid 7 or 10 digit phone number. ");
+event.rc = false;
+}
+
+}
+
+----
+//web
+var re = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid Web address.");
+event.rc = false;
+}
+}

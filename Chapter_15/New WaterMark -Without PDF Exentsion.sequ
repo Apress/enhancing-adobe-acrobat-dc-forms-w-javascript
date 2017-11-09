@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Workflow xmlns="http://ns.adobe.com/acrobat/workflow/2012" title="New WaterMark -Without PDF Exentsion" description="This is a better way of writing the code.&#xD;&#xA;Adds a watermark to the left of the page" majorVersion="1" minorVersion="0">
+	<Group label="Untitled">
+		<Command name="JavaScript" pauseBefore="false" promptUser="true">
+			<Items>
+				<Item name="ScriptCode" type="text" value="/* Put script title here */&#xD;&#xA;this.addWatermarkFromText({  &#xD;&#xA;cText: this.documentFileName.replace(/\.pdf$/i, &quot;&quot;),  &#xD;&#xA;nFontSize: 12,  &#xD;&#xA;cFont: &quot;Arial,Bold&quot;, &#xD;&#xA;aColor: color.red,&#xD;&#xA;nOpacity: 0.4,&#xD;&#xA;nVertAlign: app.constants.align.bottom,&#xD;&#xA;nHorizAlign:app.constants.align.left,  &#xD;&#xA;nVertValue: 18  &#xD;&#xA;});  "/>
+				<Item name="ScriptName" type="text" value=""/>
+			</Items>
+		</Command>
+	</Group>
+</Workflow>

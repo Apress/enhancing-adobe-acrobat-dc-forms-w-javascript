@@ -1,0 +1,37 @@
+//Shipping Price Charge
+
+var oShip = this.getField("Shipping");
+var oSub = this.getField("Total");
+var oDiscount = this.getField("discount");
+
+if(oSub.value <200)
+var oRate = (oSub.value - oDiscount.value)*.25;
+else
+var oRate =0;
+oShip.value = oRate;
+-----
+
+//
+var oShip = this.getField("Shipping");
+var oSub = this.getField("Total");
+var oDiscount = this.getField("discount");
+
+if(oSub.value <200)
+var oRate = (oSub.value - oDiscount.value)*.17;
+else
+var oRate =0;
+oShip.value = oRate;
+
+----
+//
+var oShip = this.getField("Shipping");
+var oSub = this.getField("Total");
+var oDiscount = this.getField("discount");
+
+if(oSub.value <200)
+var oRate = (oSub.value - oDiscount.value)*.13;
+else
+var oRate =0;
+oShip.value = oRate;
+
+

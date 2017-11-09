@@ -1,0 +1,53 @@
+function CloseWarning()
+{
+var btn = app.alert("Are you sure you want to quit?",2,2);
+if (btn == 4){
+this.closeDoc();
+}
+}
+----
+
+var itemPicked = app.popUpMenu("Information","About BC Lapidary Society", ["Dealers","TMC Gem Show Dealers","BCompany","GCompany","MCompany","SCompany"] ,"-","Quiz", "Close Document");
+
+switch(itemPicked){
+case "Information":
+this.pageNum = 1;
+break;
+
+case "About BC Lapidary Society":
+this.pageNum = 3;
+break;
+
+case "TMC Gem Show Dealers":
+this.pageNum = 5;
+break;
+
+case "BCompany":
+this.pageNum = 6;
+break;
+
+case "GCompany":
+this.pageNum = 7;
+break;
+
+case "MCompany":
+this.pageNum = 8;
+break;
+
+case "SCompany":
+this.pageNum = 9;
+break;
+
+case "Quiz":
+this.pageNum = 10;
+break;
+
+case "Close Document":
+CloseWarning();
+break;
+
+//optional
+ default:
+app.alert("Not found here.");
+break;
+}

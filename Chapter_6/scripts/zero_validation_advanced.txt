@@ -1,0 +1,60 @@
+//Original formula
+
+if (this.getField("Field_A").value != this.getField("Field_A").defaultValue && this.getField("Field_B").value != this.getField("Field_B").defaultValue) {
+event.value = this.getField("Field_A").value*1 + this.getField("Field_B").value*1 ;
+} else {
+event.value ="" ;
+}
+
+//Stricter comparison 0!="" becomes 0!==""
+
+
+//Sum Validation to insure 0 is not missing from an actual calculation
+if (a.value !== a.defaultValue && b.value !== b.defaultValue) {
+event.value = a.value*1 + b.value*1 ;
+} else {
+event.value ="" ;
+}
+
+//Product Validation to insure 0 is not missing from an actual calculation
+if (c.value !== c.defaultValue && d.value !== d.defaultValue) {
+event.value = (c.value*1) * (d.value*1);
+}
+else {
+event.value ="" ;
+}
+
+//Subtraction Validation to insure 0 is not missing from an actual calculation
+if (f.value !== f.defaultValue && g.value !== g.defaultValue) {
+event.value = f.value*1 - g.value*1 ;
+} else {
+event.value ="" ;
+}
+
+//Divide Validation to insure 0 is not missing from an actual calculation
+if (h.value !== h.defaultValue) {
+event.value = (h.value*1) / j.value;
+} else {
+event.value ="" ;
+}
+
+//Average Validation to insure 0 is not missing from an actual calculation
+if (k.value !== k.defaultValue && m.value !== m.defaultValue) {
+event.value = (k.value*1 + m.value*1)/2 ;
+} else {
+event.value ="" ;
+}
+
+//Minimum Validation to insure 0 is not missing from an actual calculation
+if (q.value !== q.defaultValue && r.value !== r.defaultValue) {
+event.value = Math.min(q.value*1,r.value*1);
+} else {
+event.value ="" ;
+}
+
+//Max Validation to insure 0 is not missing from an actual calculation
+if (p.value !== p.defaultValue && n.value !== n.defaultValue) {
+event.value = Math.max(p.value*1,n.value*1);
+} else {
+event.value ="" ;
+}

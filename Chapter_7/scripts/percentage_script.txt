@@ -1,0 +1,12 @@
+//Custom Format
+
+if (event.value !=="" && !isNaN(event.value)){
+event.value = util.printf("%.2f%",event.value*100);
+}else{
+event.value = "";
+}
+
+//Custom Validation
+if (event.value !== "") {
+event.value = event.value / 100 ;
+}

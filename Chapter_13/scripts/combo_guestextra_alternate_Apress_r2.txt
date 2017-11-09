@@ -1,0 +1,128 @@
+//talkExport
+
+function addToTalkList(cEntry)
+{
+    // Acquire the Distribution List Field
+    var OrgLFld = this.getField("orderTalkList");
+
+    // Make sure entry does not already exist
+    // by comparing it to all of the existing entries
+    var bFound = false;
+    for(var i=0;i<OrgLFld.numItems;i++)
+    {
+       if(OrgLFld.getItemAt(i,false) == cEntry)
+       {
+          bFound = true;
+          break;
+       }
+    }
+    
+    if(!bFound)
+    { // Insert entry at end of list
+      OrgLFld.insertItemAt({cName:cEntry, nIdx:-1});
+    }
+}
+
+
+function GetMasterExport(cEntry)
+{
+   // Acquire the Master List Field
+   var OrgLFld = this.getField("speakerList");
+   for(var i=0;i<OrgLFld.numItems;i++)
+   {  // If item matches, then return the export value
+      if(OrgLFld.getItemAt(i,false) == cEntry)
+      {
+        return OrgLFld.getItemAt(i,true);
+      }
+   }
+   return null;
+}
+------
+// Add Button
+var OrgLFld = this.getField("speakerList");
+if(OrgLFld)
+{
+var cEntry = OrgLFld.getItemAt(OrgLFld.currentValueIndices,false);
+addToTalkList(cEntry);
+}
+-----
+// Delete Button
+
+var OrgLFld = this.getField("orderTalkList");
+var prev = OrgLFld.currentValueIndices;
+if(OrgLFld.currentValueIndices > -1)
+{
+   OrgLFld.deleteItemAt(OrgLFld.currentValueIndices);
+   if(OrgLFld.numItems > prev){
+     OrgLFld.currentValueIndices = prev;}
+   else if(OrgLFld.numItems > 0){
+     OrgLFld.currentValueIndices = prev-1;}
+}
+-----
+// Clear Button
+this.getField("orderTalkList").clearItems();
+-----
+
+//Up Button
+OrgLFld = this.getField("orderTalkList");
+if(OrgLFld)
+{
+var prevIdx = OrgLFld.currentValueIndices;
+if(prevIdx > 0)
+{
+var curValue = OrgLFld.getItemAt(prevIdx);
+OrgLFld.deleteItemAt(prevIdx);
+OrgLFld.insertItemAt({cName:curValue, nIdx:prevIdx-1});
+OrgLFld.currentValueIndices = prevIdx - 1;
+}
+}
+-----
+//Down Button
+OrgLFld = this.getField("orderTalkList");
+if(OrgLFld)
+{
+ var prevIdx = OrgLFld.currentValueIndices;
+if( (prevIdx >= 0) && (prevIdx < (OrgLFld.numItems -1)) )
+{
+var curValue = OrgLFld.getItemAt(prevIdx);
+OrgLFld.deleteItemAt(prevIdx);
+OrgLFld.insertItemAt({cName:curValue, nIdx:prevIdx+1});
+OrgLFld.currentValueIndices = prevIdx + 1;
+}
+}
+------
+
+//Selection Change for First List box
+
+if(event.willCommit)
+{
+  addToTalkList(event.value, this.cLastValEx);
+  this.cLastValEx = null;
+
+}
+else
+{
+  this.getField("Topic1").value = event.changeEx;
+  
+
+}
+
+
+-----
+//Selection Change for Second List Box
+
+if(event.willCommit)
+{
+  if(event.value){
+    this.getField("Topic2").value = GetMasterExport(event.value);}
+  else{
+    this.getField("Topic2").value = "";}
+}
+
+
+-------
+
+
+
+
+

@@ -1,0 +1,2 @@
+// Mouse Up script for a button
+event.target.buttonImportIcon(); 

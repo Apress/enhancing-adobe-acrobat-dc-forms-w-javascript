@@ -1,0 +1,81 @@
+//Alert Box Response 
+//On Focus
+// Customer Full name
+
+var t = event.target; // the target field
+var cResponse = app.response({
+cQuestion: "Type your name Last, First",
+cTitle: "Name",
+cDefault: "Name not added",
+cLabel: "Type your name"});
+{
+if ( cResponse == null){ // if Cancel is selected
+app.alert ("You cancelled adding your name.");
+cResponse = "";
+}
+else{
+app.alert("You typed your name as: \""+cResponse+"\" \n\n Tab out of the field to register your name",3);
+}
+}
+t.value = cResponse; // places the data from the dialog to the target field
+-------
+// the Date
+
+var t = event.target; // the target field
+var cResponse = app.response({
+cQuestion: "Type the Date mm / dd / yyyy",
+cTitle: "Date",
+cDefault: "Date not added",
+cLabel: "Type the Date"});
+{
+if ( cResponse == null){ // if Cancel is selected
+app.alert ("You cancelled adding the date.");
+cResponse = "";
+}
+else{
+app.alert("You typed the date as: \""+cResponse+"\" \n\n Tab out of the field to register the date",3);
+}
+}
+t.value = cResponse; // places the data from the dialog to the target field
+
+----
+
+// Customer Code or Credit Card Example
+var t = event.target; // the target field
+var cResponse = app.response({
+cQuestion: "Type your Customer Order Code number using numbers/letters only and without dashes",
+cTitle: "Customer Order Code",
+cLabel: "Type your 16 digit code number"});
+{
+if ( cResponse == null){ // if Cancel is selected
+app.alert ("You cancelled adding your code.");
+cResponse = "";
+}
+else {
+if (cResponse.length != 16){
+app.alert("Type the complete number/letters without dashes or there may be more or less than 16 digits.");
+cResponse = "";}
+else{
+app.alert("You typed your Order Code number as: \""+cResponse+"\" \n\n Tab out of the field to register the card number",3);}}
+}
+t.value = cResponse; // places the data from the dialog to the target field
+
+
+---------
+// Company name
+
+var t = event.target; // the target field
+var cResponse = app.response({
+cQuestion: "Type your Company's Name",
+cTitle: "Company Name",
+cDefault: "Company Name not added",
+cLabel: "Type your Company name"});
+{
+if ( cResponse == null){ // if Cancel is selected
+app.alert ("You cancelled adding your Company's name.");
+cResponse = "";
+}
+else{
+app.alert("You typed your Company name as: \""+cResponse+"\" \n\n Tab out of the field to register your name",3);
+}}
+t.value = cResponse; // places the data from the dialog to the target field

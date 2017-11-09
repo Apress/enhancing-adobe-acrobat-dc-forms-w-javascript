@@ -1,0 +1,50 @@
+// Various array number formats on a document level
+function PFCustom_Format() { 
+
+// array of fields to apply custom format and keystroke to 
+var aFormatFields = new Array("Addition2", "Subtraction2", "Multiplication2", "Division2", "Complex_example2"); 
+
+// define the varibles for the custom number formatting and keystroke 
+var nDecimal = "2"; // number of decimals 
+var separStyle = "0"; // separator sytle 
+var negativeStyle = "0"; // negative display style 
+var currencyStyle = "0"; // currency style 
+var symCurrency = "\"$\""; // currency symbol 
+var symCurrencyPrepend = "true"; // logical to prepend (add before) currency symbol 
+// build the format string 
+var strFormat = nDecimal + ", " + separStyle + ", " + negativeStyle + ", " + currencyStyle +", " + symCurrency + ", " + symCurrencyPrepend; 
+// set the custom format and keystroke for the fields 
+for (i = 0; i < aFormatFields.length; i++) { 
+this.getField(aFormatFields[i]).setAction("Format", "AFNumber_Format(" + strFormat + ")"); 
+this.getField(aFormatFields[i]).setAction("Keystroke", "AFNumber_Keystroke("+ strFormat + ")"); 
+} // end for loop 
+return; 
+} // end custom format function 
+-----
+PFCustom_Format(); // format fields - by doing this once under custom to one of the above fields it seems to get the others to format needs a jump start
+------------
+
+
+function PFCustom_Format2() { 
+
+// array of fields to apply custom format and keystroke to 
+var aFormatFields2 = new Array("Addition0", "Addition1","Subtraction0", "Subtraction1", "Multiplication0", "Multiplication1", "Division0", "Division1","Complex_example0", "Complex_example1");
+
+// define the varibles for the custom number formatting and keystroke 
+var nDecimal = "2"; // number of decimals 
+var separStyle = "0"; // separator sytle 
+var negativeStyle = "0"; // negative display style 
+var currencyStyle = "0"; // currency style 
+var symCurrency = "\"\""; // currency symbol 
+var symCurrencyPrepend = "false"; // logical to prepend(add before) currency symbol 
+// build the format string 
+var strFormat2 = nDecimal + ", " + separStyle + ", " + negativeStyle + ", " + currencyStyle +", " + symCurrency + ", " + symCurrencyPrepend; 
+// set the custom format and keystroke for the fields 
+for (i = 0; i < aFormatFields2.length; i++) { 
+this.getField(aFormatFields2[i]).setAction("Format", "AFNumber_Format(" + strFormat2 + ")"); 
+this.getField(aFormatFields2[i]).setAction("Keystroke", "AFNumber_Keystroke("+ strFormat2 + ")"); 
+} // end for loop 
+return; 
+} // end custom format function
+------ 
+PFCustom_Format2(); // format fields - by doing this once under custom to one of the above fields it seems to get the others to format needs a jump start

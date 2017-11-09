@@ -1,0 +1,129 @@
+/*Date*/
+//validate script
+//Date Validation
+var re6Date = /^(\d{1,2})\/(\d{1,2})\/(\d{2})$/;
+var re8Date = /^(\d{1,2})\/(\d{1,2})\/(\d{4})$/;
+
+//prevent alert if field is blank
+if(event.value !=""){
+if (re6Date.test(event.value)== false && re8Date.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid format. It must be mm/dd/yy or mm/dd/yyyy. ");
+event.rc = false;
+}
+
+}
+-----
+
+/*Employee Name*/
+// Custom Format script
+if (!event.value){ event.value = "What is your First and Last Name?";
+event.target.textColor = color.gray;
+}
+else{
+event.target.textColor = color.black;
+}
+----
+//Validate Script
+// Custom Validation of Name
+var re = /^[A-Z][a-z]+ [A-Z][a-z]+$/
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("That does not appear to be a valid name. I need a first and last name.");
+event.rc = false;
+}
+}
+-----
+
+/*Employee Serial Number*/
+// Custom Format script
+if (!event.value){ event.value = "Example: A6BF-479X-2139";
+event.target.textColor = color.gray;
+}
+else{
+event.target.textColor = color.black;
+}
+---
+//Validate Script
+//account number
+//A6BF-479X-2139
+var re = /^[A-Z]\d[A-Z]{2}-\d{3}[A-Z]-\d{4}$/
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid account number.");
+event.rc = false;
+}
+}
+-----
+
+/*Email*/
+// Custom Format script
+if (!event.value){ event.value = "myemail@email.com";
+event.target.textColor = color.gray;
+}
+else{
+event.target.textColor = color.black;
+}
+----
+//Validate Script
+//email
+var re = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid email address.");
+event.rc = false;
+}
+}
+------
+
+/*Website URL*/
+// Custom Format script
+if (!event.value){ event.value = "http://mywebsite.com";
+event.target.textColor = color.gray;
+}
+else{
+event.target.textColor = color.black;
+}
+----
+//Validate Script
+//web
+var re = /^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/)[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$/;
+//prevent alert if field is blank
+if(event.value !=""){
+if (re.test(event.value)== false)
+{
+app.alert("I'm sorry. That is not a valid web address.");
+event.rc = false;
+}
+}
+----
+
+/*Telephone Number*/
+// Custom Format script
+var rgexTele = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+if (!event.value){ 
+event.value = "Example: 999-999-9999";
+event.target.textColor = color.gray;
+}
+else if(rgexTele.test(event.value)){
+event.target.textColor = color.black;
+}
+
+else{
+event.target.textColor = ["RGB",1,0,0]; //Change text to red
+}
+------
+//Validate Script
+var rgexTele = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+if(rgexTele.test(event.value))
+event.target.textColor = color.black; //Change text to black
+else
+{
+event.target.textColor = ["RGB",1,0,0]; //Change text to red
+app.alert("Invalid Telephone Number! Must be 10 digits.");
+}

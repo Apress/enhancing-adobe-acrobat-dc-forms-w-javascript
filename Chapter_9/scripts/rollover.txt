@@ -1,0 +1,32 @@
+//Rollover Help
+//Action for Box
+
+//Mouse Enter
+var helpText = this.getField("txtHelp");
+helpText.value =gHelpText[0];
+//Array for boxes
+//helpText.value =gHelpText[1];
+//helpText.value =gHelpText[2];
+//helpText.value =gHelpText[3];
+
+//Mouse Exit
+HelpExit();
+
+//Document JavaScripts
+
+//HelpExit
+
+function HelpExit()
+{
+var helpText = this.getField("txtHelp");
+helpText.value ="";
+}
+
+//helpText
+
+var gHelpText = [ // Create a variable, gHelpText
+"What's your full name?", //String#0
+"mm/dd/yyyy", //String#1
+"Your customer code is on the form that was emailed to you.", //String#2
+"What's your Company Name?" //String#3
+]

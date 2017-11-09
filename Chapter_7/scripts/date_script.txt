@@ -1,0 +1,16 @@
+//Start Date End Date
+
+var strStart = this.getField("DateStart").value;
+var strEnd = this.getField("DateEnd").value;
+if(strStart.length && strEnd.length)
+{
+  var dateStart = util.scand("mmm d, yyyy",strStart);
+  var dateEnd = util.scand("mmm d, yyyy",strEnd);
+  var diff = dateEnd.getTime() - dateStart.getTime();
+  var oneDay = 24 * 60 * 60 * 1000;
+  var days = Math.floor(diff/oneDay)+1;
+  event.value = days;
+}
+else{
+  event.value = 0;
+}

@@ -1,0 +1,56 @@
+//Set Title Enteries
+
+var oArray = {
+   Investment: [ ["-"], ["How to Make a Million in Mining"],
+   ["Investing Wisely in Jade"], ["Playing the Market with Lead"],
+   ["Investing in Bonds and Silver"]],
+Mining: [ ["-"], ["Gold Today"], ["Silver Futures"], ["Copper Watch"],["Stake the Claim"]],
+Gold:  [ ["-"], ["Global Annual Gold Festival"],
+   ["Gold Watch"], ["All that Glitters"],
+   ["Fool's Gold"]],
+"Tourmaline Mining":  [ ["-"], ["Tourmaline Queen"],
+    ["Waltermelon Gem"], ["Pick and Shovel"],
+   ["Rocks and Gems"]],
+};
+function SetTitleEntries()
+{
+if(event.willCommit)
+{
+//var cRowName = event.target.name.split(".").shift();
+var list = oArray[event.value];
+if( (list != null) && (list.length > 0) )
+{
+
+this.getField("ListTitles").setItems(list);
+
+}
+ else
+ {
+
+this.getField("ListTitles").clearItems();
+
+ }
+  }
+}
+
+-----
+//Check Box JavaScript
+var topicFld = this.getField("cboNewsletters");
+var clistT = this.getField("ListTitles");
+
+if (event.target.value == "Yes")
+{
+
+topicFld.display = display.visible;
+clistT.display = display.visible;
+}
+else {
+topicFld.display = display.hidden;
+clistT.display = display.hidden;
+
+}
+-------
+//Drodown Change
+SetTitleEntries()
+
+---

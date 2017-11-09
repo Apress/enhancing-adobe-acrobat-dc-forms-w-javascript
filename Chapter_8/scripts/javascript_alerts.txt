@@ -1,0 +1,53 @@
+
+//Welcome Main Console JavaScript
+
+
+//Welcome Message on start
+app.alert("Welcome to our Newsletter!",3,0);
+---------
+//viewerType Message
+if (typeof(app.viewerType)!="undefined")
+
+if (app.viewerType == "Reader")
+{
+var msg = "You must use Acrobat Standard, Acrobat Pro, or Acrobat Pro Extended to complete this form.";
+app.alert(msg,1,0);
+}
+
+-----------
+//viewerVersion message
+//What Version of Acrobat
+if (typeof(app.viewerVersion)!="undefined")
+if (app.viewerVersion <7.5)
+{
+var msg = "You must use Adobe Acrobat or Adobe Reader version 7.5 or above to complete this form.";
+app.alert(msg,1,0);
+}
+-----
+
+//Document Actions
+//Upon Close
+app.alert("Thanks for looking at our Newsletter!",3,0);
+
+//Upon Print
+var msg = "Hope you found what you were looking for."
+app.alert(msg,3,1);
+
+
+----
+//Message Alert Button
+
+var msg = "This is my first JavaScript Alert Message";
+app.alert(msg,3,0);
+//app.beep(3);
+//App sounds range from 0-4
+
+-----
+
+// Print current page silently
+//this.print(false, this.pageNum, this.pageNum);
+
+// Print current page silently and the range below it
+this.print(false, this.pageNum, this.pageNum+1);
+//If there are more more pages in the range this.pageNum+1, becomes this.pageNum+2 and so on.
+

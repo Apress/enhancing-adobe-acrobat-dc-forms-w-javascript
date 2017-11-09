@@ -1,0 +1,63 @@
+// Global CloseIfSure
+
+function CloseIfSure()
+{
+var btn = app.alert("Are you sure you want to quit?",2,2);
+if (btn == 4){
+this.closeDoc();
+}
+}
+
+-------
+
+var itemPicked = app.popUpMenu("Information","About BC Lapidary Society", ["Dealers","BC Gem Show Dealers","Amethyst Creations","Eye Candy Gallery","Mountain Gems Ltd","Sahara Minerals"] ,"-","Quiz", "Close Document");
+
+switch(itemPicked){
+case "Information":
+this.pageNum = 1;
+break;
+
+case "About BC Lapidary Society":
+this.pageNum = 3;
+break;
+
+case "BC Gem Show Dealers":
+this.pageNum = 5;
+break;
+
+case "Amethyst Creations":
+this.pageNum = 6;
+break;
+
+case "Eye Candy Gallery":
+this.pageNum = 7;
+break;
+
+case "Mountain Gems Ltd":
+this.pageNum = 8;
+break;
+
+case "Sahara Minerals":
+this.pageNum = 9;
+break;
+
+case "Quiz":
+this.pageNum = 10;
+break;
+
+case "Close Document":
+CloseIfSure();
+break;
+
+//optional
+ default:
+app.alert("Not found here.");
+break;
+}
+
+
+
+
+
+
+

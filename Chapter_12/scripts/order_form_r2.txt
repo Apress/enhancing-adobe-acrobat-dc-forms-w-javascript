@@ -1,0 +1,85 @@
+//Order Form Scripts
+// Global Document addDescription
+
+function SetEachValue()
+{
+if(!event.willCommit)
+{
+var cRowName = event.target.name.split(".").shift();
+var nSelection = 0;
+if(!isNaN(event.changeEx))
+nSelection = event.changeEx;
+this.getField(cRowName + ".Each").value = nSelection;
+}
+}
+
+------
+
+// Global Document addItems
+var oArray = {
+   Drills: [ ["-","None"], ["Small",19.95],
+   ["Medium",29.95], ["Large",39.95],
+   ["Extra Large",44.95]],
+Lubricants: [ ["-","None"], ["Oil",69.95], ["Grease",49.95], ["Super Smooth",79.95],["Average",139.95]],
+Gears:  [ ["-","None"], ["Small",149.95],
+   ["Medium",159.95], ["Large",219.95],
+   ["Very Large",339.95]],
+Mining:[ ["-","None"], ["Hard Hat",39.95], ["Pick",29.95], ["Axe",19.95],["Shovel",49.95]]
+};
+function SetDescriptionEntries(){
+if(event.willCommit){
+var cRowName = event.target.name.split(".").shift();
+var list = oArray[event.value];
+if( (list != null) && (list.length > 0) ){
+this.getField(cRowName + ".Description").setItems(list);
+}
+ else{
+this.getField(cRowName + ".Description").clearItems();
+ }
+this.getField(cRowName + ".Each").value = 0;
+  }
+ }
+
+------
+
+// Global Document calculateRowTotal
+function CalculateRowTotal()
+{
+var cRowName = event.target.name.split(".").shift();
+event.value = this.getField(cRowName + ".Each").value * this.getField(cRowName + ".Qty").value;
+}
+
+
+--------
+// Format Custom Keystroke for Name
+SetDescriptionEntries();
+
+------
+// Format Custom Keystroke for Description
+SetEachValue();
+
+
+-----
+// Calculate Script Items
+CalculateRowTotal();
+
+------
+//Subtotal Script
+
+var a = this.getField("Row1.itemTotal");
+var b = this.getField("Row2.itemTotal");
+var c = this.getField("Row3.itemTotal");
+var d = this.getField("Row4.itemTotal");
+var f = this.getField("Row5.itemTotal");
+
+event.value =a.value + b.value + c.value + d.value + f.value;
+----
+
+//Total Script
+
+var g = this.getField("SubTotal");
+var h = this.getField("Discount");
+var j = this.getField("Tax");
+var k = this.getField("Shipping");
+
+event.value =g.value - h.value + j.value + k.value;

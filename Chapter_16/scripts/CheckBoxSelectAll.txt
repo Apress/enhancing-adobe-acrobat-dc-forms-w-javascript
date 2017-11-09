@@ -1,0 +1,11 @@
+
+/* Check Box Select All*/
+
+var otherCheckBoxes = ["CheckBox1", "CheckBox2", "CheckBox3"]; // etc.
+if (getField("Select All").value!="Off") {
+for (var i in otherCheckBoxes) getField(otherCheckBoxes[i]).checkThisBox(0,true);
+}
+else{
+for (var i in otherCheckBoxes) getField(otherCheckBoxes[i]).checkThisBox(0,false);
+}
+ 

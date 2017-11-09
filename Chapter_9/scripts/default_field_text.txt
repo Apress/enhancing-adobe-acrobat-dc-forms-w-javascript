@@ -1,0 +1,15 @@
+// Custom Format script
+
+if (!event.value) event.value = "Your default text goes here.";
+
+-------------
+// Custom Format script
+
+if (!event.value){ event.value = "What is your full name?";
+event.target.textColor = color.gray;
+}
+else{
+event.target.textColor = color.black;
+}
+
+

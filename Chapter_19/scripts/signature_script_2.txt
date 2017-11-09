@@ -1,0 +1,30 @@
+//Employee Signature Field
+var a = this.getField("employee");
+a.readonly = true;
+---
+//Submit to Supervisor button
+var a = this.getField("supervisor");
+a.display = display.visible;
+----
+//Employee Reset Button
+var a = this.getField("employee");
+this.resetForm(a);
+-----
+//Submit to HR Button
+var a = this.getField("supervisor");
+var b = this.getField("employee.submitForm");
+a.display = display.visible;
+b.display = display.hidden;
+----
+// Supervisor Reset Button
+var a = this.getField("supervisor");
+this.resetForm(a);
+----
+//Reset the whole form Button
+var a = this.getField("supervisor");
+var b = this.getField("employee.submitForm");
+var c = this.getField("employee.resetForm");
+a.display = display.hidden;
+b.display = display.visible;
+c.display = display.visible;
+

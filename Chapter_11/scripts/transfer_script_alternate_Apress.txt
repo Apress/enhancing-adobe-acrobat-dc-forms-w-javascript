@@ -1,0 +1,34 @@
+//to.group radio button 1 checking
+
+var rfrom = this.getField("from.group");
+var rtrans = event.target;
+var msg = "You cannot transfer funds from Checking to Checking";
+
+if (rfrom.value == "checking"){
+app.alert(msg);
+rfrom.value = "";
+rtrans.value = "";
+}
+
+-------
+//to.group radio button 2 savings
+var rfrom = this.getField("from.group");
+var rtrans = event.target;
+var msg = "You cannot transfer funds from Savings to Savings";
+
+if (rfrom.value == "savings"){
+app.alert(msg);
+rfrom.value = "";
+rtrans.value = "";
+}
+-----
+//to.group radio button 3 mm
+var rfrom = this.getField("from.group");
+var rtrans = event.target;
+var msg = "You cannot transfer funds from Money Market Pro to Money Market Pro";
+
+if (rfrom.value == "mm"){
+app.alert(msg);
+rfrom.value = "";
+rtrans.value = "";
+}

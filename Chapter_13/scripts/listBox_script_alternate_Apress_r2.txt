@@ -1,0 +1,93 @@
+//Scripts for Priority List Box
+
+// Add Button
+var OrgLFld = this.getField("qualityList");
+if(OrgLFld)
+{
+var cEntry = OrgLFld.getItemAt(OrgLFld.currentValueIndices,false);
+addToPriorityList(cEntry);
+}
+------
+// Delete Button
+
+var OrgLFld = this.getField("priorityList");
+var prev = OrgLFld.currentValueIndices;
+if(OrgLFld.currentValueIndices > -1)
+{
+   OrgLFld.deleteItemAt(OrgLFld.currentValueIndices);
+   if(OrgLFld.numItems > prev){
+     OrgLFld.currentValueIndices = prev;}
+   else if(OrgLFld.numItems > 0){
+     OrgLFld.currentValueIndices = prev-1;}
+}
+------
+// Clear Button
+this.getField("priorityList").clearItems();
+
+------
+//Up Button
+OrgLFld = this.getField("priorityList");
+if(OrgLFld)
+{
+var prevIdx = OrgLFld.currentValueIndices;
+if(prevIdx > 0)
+{
+var curValue = OrgLFld.getItemAt(prevIdx);
+OrgLFld.deleteItemAt(prevIdx);
+OrgLFld.insertItemAt({cName:curValue, nIdx:prevIdx-1});
+OrgLFld.currentValueIndices = prevIdx - 1;
+}
+}
+------
+//Down Button
+OrgLFld = this.getField("priorityList");
+if(OrgLFld)
+{
+ var prevIdx = OrgLFld.currentValueIndices;
+if( (prevIdx >= 0) && (prevIdx < (OrgLFld.numItems -1)) )
+{
+var curValue = OrgLFld.getItemAt(prevIdx);
+OrgLFld.deleteItemAt(prevIdx);
+OrgLFld.insertItemAt({cName:curValue, nIdx:prevIdx+1});
+OrgLFld.currentValueIndices = prevIdx + 1;
+}
+}
+------
+//Global addToPriority Script
+
+function addToPriorityList(cEntry)
+{
+var OrgLFld = this.getField("priorityList");
+var bFound = false;
+for(var i=0;i<OrgLFld.numItems;i++)
+{
+if(OrgLFld.getItemAt(i,false) == cEntry)
+{
+bFound = true;
+break;
+}
+}
+
+if(!bFound)
+{
+OrgLFld.insertItemAt({cName:cEntry, nIdx:-1});
+}
+}
+------
+//Add New Priority Button
+//Add Custom Item
+    var textValue = this.getField("customAdd").value;
+    var listField = this.getField("priorityList");
+    if (textValue) {
+        listField.insertItemAt(textValue, textValue, -1);
+    }
+---
+//Formatt Text Field
+if(!event.value){
+event.value="Add To List";
+event.target.textColor=color.gray;
+}
+else{
+event.target.textColor=color.black;
+
+}

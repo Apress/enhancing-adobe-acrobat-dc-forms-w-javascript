@@ -1,0 +1,15 @@
+var rgexTele = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+if(rgexTele.test(event.value)){
+	event.target.textColor = color.black; //Change text to black
+{
+else{
+	event.target.textColor = ["RGB",1,0,0]; //Change text to red
+	app.alert("Invalid Telephone Number");
+}
+
+
+//
+(123) 456-7890
+ 123-456-7890
+ 123.456.7890
+ 1234567890

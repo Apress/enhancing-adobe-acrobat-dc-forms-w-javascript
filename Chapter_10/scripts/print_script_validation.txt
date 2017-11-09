@@ -1,0 +1,49 @@
+// Print current page silently
+//this.print(false, this.pageNum, this.pageNum);
+
+// Print current page silently and the range below it
+this.print(false, this.pageNum, this.pageNum+1);
+//If there are more more pages in the range this.pageNum+1, becomes this.pageNum+2 and so on.
+
+
+
+//get negative number
+if (event.value > 0){
+//event.value = event.value*-1;
+//for text colour.black
+event.target.textColor =["RGB",0,0,0];
+// textFont or fontFamily
+event.target.textFont =font.Times;
+//Size
+event.target.textSize = 11;
+
+//for field colour.none
+event.target.strokeColor = ["T"];
+event.target.fillColor = color.transparent;
+
+//left=0, centered=1, right=2
+event.target.alignment ="left";
+
+
+}
+else{
+event.target.textColor = ["RGB",1,0,0];
+// textFont or fontFamily
+event.target.textFont =font.Helv;
+//Size
+event.target.textSize = 14;
+
+//for field colour.red
+event.target.strokeColor = ["RGB",1,0,0];
+//fill of field
+event.target.fillColor = color.yellow;
+// Borders 0=none, 1=thin, 2=medium, 3 = thick
+event.target.lineWidth =2;
+// Border Style border.s= solid, border.b= beveled, border.d = dashed, border.i = inset, border.u = underline
+event.target.borderStyle = border.d;
+//left=0, centered=1, right=2
+event.target.alignment ="center";
+
+}
+
+

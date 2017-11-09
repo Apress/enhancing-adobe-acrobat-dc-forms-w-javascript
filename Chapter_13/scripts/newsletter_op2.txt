@@ -1,0 +1,48 @@
+//Check Box JavaScript
+var listT = this.getField("ListTitle");
+var investments = this.getField("Investments");
+var mining = this.getField("Mining");
+var gold = this.getField("Gold");
+
+if (event.target.value == "Yes")
+{
+listT.display = display.visible;
+}
+else {
+listT.display = display.hidden;
+investments.display = display.hidden;
+mining.display = display.hidden;
+gold.display = display.hidden;
+
+}
+
+---
+//Selection Change 
+var investments = this.getField("Investments");
+var mining = this.getField("Mining");
+var gold = this.getField("Gold");
+
+if (event.changeEx == "IV"){
+investments.display = display.visible;
+mining.display = display.hidden;
+gold.display = display.hidden;
+}
+
+else if (event.changeEx == "MN"){
+investments.display = display.hidden;
+mining.display = display.visible;
+gold.display = display.hidden;
+}
+
+else if (event.changeEx == "GD"){
+investments.display = display.hidden;
+mining.display = display.hidden;
+gold.display = display.visible;
+}
+
+else if (event.changeEx == "None"){
+investments.display = display.hidden;
+mining.display = display.hidden;
+gold.display = display.hidden;
+}
+

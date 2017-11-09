@@ -1,0 +1,53 @@
+
+/*Old way*/
+/* Put script title here */
+var theFileName = event.target.documentFileName;
+theFileName = theFileName.replace(/\.[^/.]+$/, "");
+event.target.addWatermarkFromText({
+cText: theFileName,
+nFontSize: 12,
+nVertAlign:app.constants.align.bottom,
+nVertValue: 18
+});
+
+---
+/*Better way*/
+this.addWatermarkFromText({  
+cText: this.documentFileName.replace(/\.pdf$/i, ""),  
+nFontSize: 12,  
+cFont: "Arial,Bold", 
+aColor: color.red,
+nOpacity: 0.4,
+nVertAlign: app.constants.align.bottom,  
+nVertValue: 18  
+});  
+
+---
+/* Put script title here */
+this.addWatermarkFromText({  
+cText: this.documentFileName.replace(/\.pdf$/i, ""),  
+nFontSize: 12,  
+cFont: "Arial,Bold", 
+aColor: color.red,
+nOpacity: 0.4,
+nVertAlign: app.constants.align.bottom,
+nHorizAlign:app.constants.align.left,  
+nVertValue: 18  
+}); 
+
+---
+//Note:Additional Values
+aColor: color.red
+cText: this.documentFileName
+cFont:font.HelvB or cFont:"Helvetica-Bold"
+nFontSize:24
+nTextAlign:app.constants.align.center/left/right
+nHorizAlign:app.constants.align.center/left/right
+nVericalAlign:app.constants.align.center/top/bottom
+nVertValue:12
+nRotation:45
+nScale:0.90
+nOpacity:0.40
+
+ 
+

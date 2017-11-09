@@ -1,0 +1,15 @@
+// Custom Format script for telephone number
+var rgexTele = /^[(]{0,1}[0-9]{3}[)]{0,1}[-\s\.]{0,1}[0-9]{3}[-\s\.]{0,1}[0-9]{4}$/;
+if (!event.value){ 
+event.value = "Example: 999-999-9999";
+event.target.textColor = color.gray;
+}
+else if(rgexTele.test(event.value)){
+event.target.textColor = color.black;
+}
+else{
+event.target.textColor = ["RGB",1,0,0]; //Change text to red
+}
+
+
+

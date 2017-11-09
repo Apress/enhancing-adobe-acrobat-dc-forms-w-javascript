@@ -1,0 +1,81 @@
+// Custom Validate script for text field
+
+if (event.value == 0) event.value = "";
+
+
+
+//Sum Script
+var a = this.getField("Object1Sum_3");
+var b = this.getField("Object2Sum_3");
+
+
+event.value = a.value + b.value;
+
+//Product Script
+var c = this.getField("Object1Productx_3");
+var d = this.getField("Object2Productx_3");
+
+event.value = c.value * d.value;
+
+
+//Subtract
+var f = this.getField("Object1Subtract_3");
+var g = this.getField("Object2Subtract_3");
+
+event.value = f.value - g.value;
+
+
+//Divide
+var h = this.getField("Object1Divide_3");
+var j = this.getField("Object2Divide_3");
+
+event.value = h.value / j.value;
+
+//Average
+var k = this.getField("Object1Average_3");
+
+var m = this.getField("Object2Average_3");
+
+event.value = (k.value + m.value)/2;
+
+//Minimum -min(x,y,z,...,n) Returns the number with the lowest value 
+
+var q = this.getField("Object1Minimum_3");
+var r = this.getField("Object2Minimum_3");
+
+event.value=Math.min(q.value,r.value);
+
+
+//Maximum -max(x,y,z,...,n) Returns the number with the highest value 
+
+var n = this.getField("Object1Maximum_3");
+var p = this.getField("Object2Maximum_3");
+
+event.value=Math.max(n.value,p.value);
+
+
+/*Other Math Objects you can try*/
+
+Math.abs(x) Returns the absolute value of x 
+Math.acos(x) Returns the arccosine of x, in radians 
+Math.asin(x) Returns the arcsine of x, in radians 
+Math.atan(x) Returns the arctangent of x as a numeric value between -PI/2 and PI/2 radians 
+Math.atan2(y,x) Returns the arctangent of the quotient of its arguments 
+Math.ceil(x) Returns x, rounded upwards to the nearest integer 
+Math.cos(x) Returns the cosine of x (x is in radians) 
+Math.exp(x) Returns the value of Ex 
+Math.floor(x) Returns x, rounded downwards to the nearest integer 
+Math.log(x) Returns the natural logarithm (base E) of x 
+Math.pow(x,y) Returns the value of x to the power of y 
+Math.random() Returns a random number between 0 and 1 
+Math.round(x) Rounds x to the nearest integer. Example Round up a subtotal.
+Math.sin(x) Returns the sine of x (x is in radians) 
+Math.sqrt(x) Returns the square root of x 
+Math.tan(x) Returns the tangent of an angle 
+
+From http://www.w3schools.com/jsref/jsref_obj_math.asp
+
+
+
+
+
